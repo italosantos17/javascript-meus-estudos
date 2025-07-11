@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste: =, ==, ===</title>
+</head>
+<body>
+  <h2>Comparação de valores</h2>
+
+  <label>Valor 1: <input type="text" id="valor1"></label><br><br>
+  <label>Valor 2: <input type="text" id="valor2"></label><br><br>
+  <button onclick="comparar()">Comparar</button>
+
+  <h3>Resultado:</h3>
+  <div id="resultado"></div>
+
+  <script>
+    function comparar() {
+      const v1 = document.getElementById('valor1').value;
+      const v2 = document.getElementById('valor2').value;
+
+      const resultado = document.getElementById('resultado');
+
+      let output = "";
+
+      // Atribuição
+      let atrib = v1;
+      output += `<strong>Atribuição (=):</strong> <br>let x = "${v1}";<br>x = "${atrib}"<br><br>`;
+
+      // Comparação com ==
+      output += `<strong>Comparação == :</strong> ${v1} == ${v2} → ${v1 == v2}<br>`;
+
+      // Comparação com ===
+      output += `<strong>Comparação === :</strong> ${v1} === ${v2} → ${v1 === v2}<br>`;
+
+      // Mostrar tipos
+      output += `<br><strong>Tipos:</strong><br>typeof "${v1}" = ${typeof v1}<br>typeof "${v2}" = ${typeof v2}<br>`;
+
+      resultado.innerHTML = output;
+    }
+  </script>
+</body>
+</h
